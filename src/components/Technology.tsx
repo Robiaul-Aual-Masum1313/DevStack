@@ -10,6 +10,7 @@ interface techProp {
 export default function Technology({ feachedPromise }: techProp) {
   const stacksData = use(feachedPromise);
   const [selectedStacks, setselectedStacks] = useState<IstackData[]>([])
+    
   return (
     <div className="container mx-auto space-y-3.5">
       <h3 className="font-extrabold text-4xl text-[#0F172A]">Explore the <span className="bg-linear-to-r from-[#EC4899] to-[#8B5CF6] text-transparent bg-clip-text">Technologies</span></h3>

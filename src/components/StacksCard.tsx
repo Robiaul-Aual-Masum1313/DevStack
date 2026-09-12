@@ -1,26 +1,28 @@
 import { MdStarRate } from "react-icons/md";
 import type { IstackData } from "../type";
-import { useState, type Dispatch, type SetStateAction } from "react";
+import {  type Dispatch, type SetStateAction } from "react";
 
 export interface StacksCardProps {
   stackData: IstackData;
   selectedStacks: IstackData[];
-  setselectedStacks : Dispatch<SetStateAction<IstackData[]>>
+  setselectedStacks : Dispatch<SetStateAction<IstackData[]>>;
 }
 
 export default function StacksCard({ stackData , selectedStacks , setselectedStacks}: StacksCardProps) {
-  const [selected, setselected] = useState<boolean>(false)
+
+
   const handleSelectedData = (stackData: IstackData) => {
 
-    const isAlreasdyAdded = selectedStacks.find(item => {
+    const isAlreasdyAdded = selectedStacks.some(item => {
       return item.id === stackData.id
     });
 
     if(!isAlreasdyAdded){
       setselectedStacks([...selectedStacks,stackData])
     }
-    setselected(true)
+    
   }
+
   // console.log(selectedStacks);
   
   return (
@@ -36,7 +38,7 @@ export default function StacksCard({ stackData , selectedStacks , setselectedSta
           <p className=" flex gap-1 items-center"><MdStarRate className="text-[#FBBF24]" />
 {stackData.rating}</p>
         </div>
-        <button onClick={() => handleSelectedData(stackData)} className="text-[12px] font-medium text-white  bg-[#0A0F1D] w-full py-2 rounded-md" disabled = {selected}>{selected ? '✓ Added to Stack' : 'Add to Stack'}</button>
+        <button onClick={() => handleSelectedData(stackData)} className="text-[12px] font-medium text-white  bg-[#0A0F1D] w-full py-2 rounded-md" disabled = {selectedStacks.some(stack => stack.id === stackData.id)}>{selectedStacks.some(stack => stack.id === stackData.id) ? '✓ Added to Stack' : 'Add to Stack'}</button>
       </div>
     </>
   );
