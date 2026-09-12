@@ -1,14 +1,30 @@
+import type { Dispatch, SetStateAction } from "react";
+import type { IstackData } from "../type";
+import SelectedStackCard from "./SelectedStackCard";
+
 export interface SelactedStackProps {
-  prop: string;
+  selectedStacks: IstackData[];
+  setselectedStacks: Dispatch<SetStateAction<IstackData[]>> ;
 }
 
-const SelactedStack = ({ prop }: SelactedStackProps) => {
+const SelactedStack = ({ selectedStacks ,setselectedStacks }: SelactedStackProps) => {
   return (
     <div className="p-6 border border-[#eee] rounded-2xl shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] space-y-2">
       <h3 className="text-[16px] font-bold text-[#0F172A]">Your Stack</h3>
-      <p className="text-[12px] font-medium text-[#94A3B8]">No technologies selected yet.</p>
-      <p className="text-[12px] font-medium text-[#94A3B8] py-8 w-full text-center border border-[#eee] rounded-2xl
-       ">Your stack is empty.</p>
+      <p className="text-[12px] font-medium text-[#94A3B8]">{selectedStacks.length === 0  ? 'No technologies selected yet.' : `${selectedStacks.length} technologies selected`}</p>
+      {
+        selectedStacks.length === 0 ? <p className="text-[12px] font-medium text-[#94A3B8] py-8 w-full text-center border border-[#eee] rounded-2xl
+       ">Your stack is empty.</p> : ''
+      }
+      <div className="">
+      {
+        selectedStacks.map( selactedStack => {
+          return <SelectedStackCard key={selactedStack.id}  selactedStack = {selactedStack} setselectedStacks = {setselectedStacks}/>
+        })
+      }
+      </div>
+
+      
     </div>
   );
 };

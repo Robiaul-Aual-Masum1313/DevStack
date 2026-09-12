@@ -1,11 +1,26 @@
 import { MdStarRate } from "react-icons/md";
 import type { IstackData } from "../type";
+import type { Dispatch, SetStateAction } from "react";
 
 export interface StacksCardProps {
   stackData: IstackData;
+  selectedStacks: IstackData[];
+  setselectedStacks : Dispatch<SetStateAction<IstackData[]>>
 }
 
-export default function StacksCard({ stackData }: StacksCardProps) {
+export default function StacksCard({ stackData , selectedStacks , setselectedStacks}: StacksCardProps) {
+  const handleSelectedData = (stackData: IstackData) => {
+
+    const isAlreasdyAdded = selectedStacks.find(item => {
+      return item.id === stackData.id
+    });
+
+    if(!isAlreasdyAdded){
+      setselectedStacks([...selectedStacks,stackData])
+    }
+  }
+  // console.log(selectedStacks);
+  
   return (
     <>
       <div className="relative p-6 border border-[#eee] rounded-2xl shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] space-y-4">
@@ -19,7 +34,7 @@ export default function StacksCard({ stackData }: StacksCardProps) {
           <p className=" flex gap-1 items-center"><MdStarRate className="text-[#FBBF24]" />
 {stackData.rating}</p>
         </div>
-        <button className="text-[12px] font-medium text-white  bg-[#0A0F1D] w-full py-2 rounded-md">Add to Stack</button>
+        <button onClick={() => handleSelectedData(stackData)} className="text-[12px] font-medium text-white  bg-[#0A0F1D] w-full py-2 rounded-md">Add to Stack</button>
       </div>
     </>
   );
