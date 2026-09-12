@@ -2,6 +2,7 @@
 import { RxCross2 } from "react-icons/rx";
 import type { IstackData } from "../type";
 import type { Dispatch, SetStateAction } from "react";
+import { toast } from "react-toastify";
 
 export interface StacksCardProps {
   selactedStack: IstackData;
@@ -10,10 +11,13 @@ export interface StacksCardProps {
 }
 
 export default function SelectedStackCard({selactedStack , selectedStacks , setselectedStacks}: StacksCardProps){
+
   const handleRemoveStack = (selactedStack: IstackData) => {
     const afterRemoveStack = selectedStacks.filter(item  => item.id !== selactedStack.id )
     setselectedStacks(afterRemoveStack)
+    toast.success(`${selactedStack.name} removed from your stack`)
   }
+
   return (
     <div className="flex justify-between items-center py-3 px-3.5 mb-4 border border-[#eee] rounded-md">
       <div  className="flex justify-between items-center gap-2.5">

@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Nav from './components/Nav'
 import Technology from './components/Technology'
 import type { IstackData } from './type'
+import { ToastContainer } from 'react-toastify'
 
 
 const feachedPromise = async () : Promise<IstackData[]> => {
@@ -23,6 +24,7 @@ function App() {
       <Suspense fallback={<p>Loading ....</p>}>
         <Technology  feachedPromise = {feachedPromise()}/>
       </Suspense>
+      <ToastContainer />
 
     </>
   )

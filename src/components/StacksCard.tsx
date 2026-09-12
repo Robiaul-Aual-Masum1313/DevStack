@@ -1,6 +1,7 @@
 import { MdStarRate } from "react-icons/md";
 import type { IstackData } from "../type";
 import {  type Dispatch, type SetStateAction } from "react";
+import { toast } from "react-toastify";
 
 export interface StacksCardProps {
   stackData: IstackData;
@@ -19,6 +20,7 @@ export default function StacksCard({ stackData , selectedStacks , setselectedSta
 
     if(!isAlreasdyAdded){
       setselectedStacks([...selectedStacks,stackData])
+      toast.success(`${stackData.name} Added To Your Stack`);
     }
     
   }
