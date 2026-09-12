@@ -19,7 +19,7 @@ const SelactedStack = ({ selectedStacks ,setselectedStacks }: SelactedStackProps
       <div className="">
       {
         selectedStacks.map( selactedStack => {
-          return <SelectedStackCard key={selactedStack.id}  selactedStack = {selactedStack} setselectedStacks = {setselectedStacks}/>
+          return <SelectedStackCard key={selactedStack.id}  selactedStack = {selactedStack} selectedStacks = {selectedStacks} setselectedStacks = {setselectedStacks}/>
         })
       }
       </div>

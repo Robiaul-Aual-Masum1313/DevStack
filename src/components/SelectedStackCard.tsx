@@ -5,10 +5,15 @@ import type { Dispatch, SetStateAction } from "react";
 
 export interface StacksCardProps {
   selactedStack: IstackData;
+  selectedStacks: IstackData[]
   setselectedStacks : Dispatch<SetStateAction<IstackData[]>>
 }
 
-export default function SelectedStackCard({selactedStack , setselectedStacks}: StacksCardProps){
+export default function SelectedStackCard({selactedStack , selectedStacks , setselectedStacks}: StacksCardProps){
+  const handleRemoveStack = (selactedStack: IstackData) => {
+    const afterRemoveStack = selectedStacks.filter(item  => item.id !== selactedStack.id )
+    setselectedStacks(afterRemoveStack)
+  }
   return (
     <div className="flex justify-between items-center py-3 px-3.5 mb-4 border border-[#eee] rounded-md">
       <div  className="flex justify-between items-center gap-2.5">
@@ -18,7 +23,7 @@ export default function SelectedStackCard({selactedStack , setselectedStacks}: S
           <p className="text-[6px] font-bold text-[#94A3B8]">{selactedStack.category}</p>
         </div>
       </div>
-      <RxCross2 />
+      <RxCross2 onClick={() => handleRemoveStack(selactedStack)} />
     </div>
   )
 }
