@@ -18,7 +18,7 @@ export default function Nav() {
             </nav>
             <div>
                 <button className='px-5 py-1.5 cursor-pointer font-semibold text-[14px]'>Login</button>
-                <button className='bg-[#D91B7E] px-5 py-1.5 rounded-full text-white cursor-pointer font-semibold text-[14px]'>Sign Up</button>
+                <button style={{background: 'var(--brand-gradent)'}} className='px-5 py-1.5 rounded-full text-white cursor-pointer font-semibold text-[14px]'>Sign Up</button>
             </div>
         </div>
     </div>

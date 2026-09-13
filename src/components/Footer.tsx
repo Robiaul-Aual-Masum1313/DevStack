@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
           <div className="col-span-1">
             <h2 className="text-[#0F172A] text-[12px] font-bold pb-3">
-              PRODUCT
+              COMPANY
             </h2>
             <ul className="text-[#64748B] text-[12px] font-medium  space-y-1.5">
               <li>
@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
           <div className="col-span-1">
             <h2 className="text-[#0F172A] text-[12px] font-bold pb-3">
-              PRODUCT
+              LEGAL
             </h2>
             <ul className="text-[#64748B] text-[12px] font-medium space-y-1.5">
               <li>

@@ -40,7 +40,7 @@ export default function StacksCard({ stackData , selectedStacks , setselectedSta
           <p className=" flex gap-1 items-center"><MdStarRate className="text-[#FBBF24]" />
 {stackData.rating}</p>
         </div>
-        <button onClick={() => handleSelectedData(stackData)} className="text-[12px] font-medium text-white  bg-[#0A0F1D] w-full py-2 rounded-md" disabled = {selectedStacks.some(stack => stack.id === stackData.id)}>{selectedStacks.some(stack => stack.id === stackData.id) ? '✓ Added to Stack' : 'Add to Stack'}</button>
+        <button style={{background: 'var(--brand-gradent)'}} onClick={() => handleSelectedData(stackData)} className="text-[12px] font-medium text-white w-full py-2 rounded-md" disabled = {selectedStacks.some(stack => stack.id === stackData.id)}>{selectedStacks.some(stack => stack.id === stackData.id) ? '✓ Added to Stack' : 'Add to Stack'}</button>
       </div>
     </>
   );
