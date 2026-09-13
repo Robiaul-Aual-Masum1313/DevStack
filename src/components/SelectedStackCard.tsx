@@ -27,7 +27,7 @@ export default function SelectedStackCard({selactedStack , selectedStacks , sets
           <p className="text-[6px] font-bold text-[#94A3B8]">{selactedStack.category}</p>
         </div>
       </div>
-      <RxCross2 onClick={() => handleRemoveStack(selactedStack)} />
+      <RxCross2 className="cursor-pointer" onClick={() => handleRemoveStack(selactedStack)} />
     </div>
   )
 }

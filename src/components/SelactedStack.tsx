@@ -29,7 +29,7 @@ const SelactedStack = ({ selectedStacks ,setselectedStacks }: SelactedStackProps
       }
       </div>
 
-      <button onClick={handleRemoveAllStack} className="text-[12px] font-medium text-[#D82C20] border border-[#ED8C85]  bg-transparent w-full py-2 rounded-md">Remove All</button>
+      <button onClick={handleRemoveAllStack} className="cursor-pointer text-[12px] font-medium text-[#D82C20] border border-[#ED8C85]  bg-transparent w-full py-2 rounded-md">Remove All</button>
     </div>
   );
 };
