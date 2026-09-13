@@ -2,10 +2,10 @@ import bannerImg from "../assets/banner-stack.png";
 
 export default function Hero() {
   return (
-    <div className="container mx-auto flex justify-between items-center py-25">
+    <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-10 lg:py-25 px-2.5 lg:px-0">
       <div className="flex-1 space-y-6">
         {/* <h2 className='text-[#0F172A] font-extrabold text-6xl'>Build Your Ideal<br /> <span style={{background: 'linear-gradent(to right,#f97316,#ec4899,#8b5cf6)', backgroundClip: 'text', color: 'transparent'}}>Development Stack</span></h2> */}
-        <h2 className="text-[#0F172A] font-extrabold text-6xl">
+        <h2 className="text-[#0F172A] font-extrabold text-3xl md:text-6xl">
           Build Your Ideal
           <br />
           <span
@@ -25,11 +25,11 @@ export default function Hero() {
           Explore frontend, backend, database, and tooling options, compare them
           side by side, and put together the stack that fits your next project.
         </p>
-        <div className="pt-11">
+        <div className="pt-11 flex flex-col gap-2.5 md:block">
           <button style={{background: 'var(--brand-gradent)'}} className="text-[14px] font-semibold text-white  px-7 py-3.5 rounded-md">
             Explore Technologies
           </button>
-          <button className="text-[14px] font-semibold ml-2.5  px-15 py-3.5 rounded-md border border-[#eee]">
+          <button className="text-[14px] font-semibold md:ml-2.5  px-15 py-3.5 rounded-md border border-[#eee]">
             Learn More
           </button>
         </div>
