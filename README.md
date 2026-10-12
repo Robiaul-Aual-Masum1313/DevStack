@@ -40,15 +40,6 @@ The main runtime dependencies include:
 * **react-dom** — Rendering React components in the browser.
 * **react-toastify** — Toast notifications for user feedback.
 
-The project may also use the following development dependencies:
-
-* **vite** — Development server and production bundler.
-* **typescript** — TypeScript compiler and type checking.
-* **tailwindcss** — Utility-first CSS framework.
-* **@vitejs/plugin-react** — React integration for Vite.
-* **eslint** — Code quality and linting.
-
-> **Note:** The exact dependencies and versions depend on your project configuration. Check `package.json` for the complete list of installed packages.
 
 ## 🚀 Getting Started
 
@@ -65,7 +56,7 @@ Make sure you have installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Robiaul-Aual-Masum1313/DevStack.git
 ```
 
 ### 2. Navigate to the Project Directory
@@ -112,14 +103,13 @@ npm run preview
 
 ## 📜 Available Scripts
 
-These are common Vite project scripts. Confirm the exact scripts in your `package.json`.
 
 | Command           | Description                           |
 | ----------------- | ------------------------------------- |
 | `npm run dev`     | Starts the Vite development server    |
 | `npm run build`   | Builds the application for production |
 | `npm run preview` | Previews the production build locally |
-| `npm run lint`    | Runs ESLint, if configured            |
+
 
 
 ## 👨‍💻 Author
@@ -128,10 +118,6 @@ These are common Vite project scripts. Confirm the exact scripts in your `packag
 
 * GitHub: [My Github Link](https://github.com/Robiaul-Aual-Masum1313)
 
-
-## 📄 License
-
-Choose a license that matches how you want others to use your project. If you intend to distribute it under the MIT License, add an MIT `LICENSE` file to your repository.
 
 ---
 
